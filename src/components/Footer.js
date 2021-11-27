@@ -71,8 +71,10 @@ const navigation = {
               </a>
             ))}
           </div>
-          <p className="mt-8 text-center text-base text-gray-400">Keelan Vella Zerafa</p>
-          <p className="mt-0 text-center text-base text-gray-400">www.elhassu.com</p>
+          <a href="/">
+            <p className="mt-8 text-center text-base text-gray-400">Keelan Vella Zerafa</p>
+            <p className="mt-0 text-center text-base text-gray-400">www.elhassu.com</p>
+          </a>
         </div>
       </footer>
     )
