@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import LearnMore from '../components/LearnMore'
 
 const logos = [
   { name: 'HTML5', url: 'https://media.discordapp.net/attachments/499936620678742059/913908582376939560/html5-logo.png' },
@@ -56,18 +56,7 @@ export default function Home() {
                     Based in Malta
                   </p>
                 </div>
-                <div className="grid justify-items-center sm:grid-cols-none sm:justify-items-start mt-6 sm:max-w-xl">
-                    <a
-                      href="/about"
-                      className="inline-flex items-center text-black bg-red-100 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
-                    >
-                      <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-red-600 rounded-full">
-                        About Me
-                      </span>
-                      <span className="ml-4 text-sm">Learn More</span>
-                      <ChevronRightIcon className="ml-2 w-5 h-5 text-gray-500" aria-hidden="true" />
-                    </a>
-                </div>
+                <LearnMore name={"About Me"} link={"about"}></LearnMore>
               </div>
             </div>
           </div>
@@ -119,7 +108,9 @@ export default function Home() {
                 </h2>
                 <p className="mt-6 max-w-3xl text-lg leading-7 text-gray-500">
                 </p>
+                <LearnMore name={"Career"} link={"career"}></LearnMore>
               </div>
+
               <div className="mt-12 grid grid-cols-2 gap-2 md:grid-cols-3 lg:mt-0 lg:grid-cols-3">
                 {logos.map((logo) => (
                   <div key={logo.name} className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
@@ -200,7 +191,9 @@ export default function Home() {
                     <p className="text-center sm:text-left">
                       The local Maltese Heavy Metal band called "Vectis"
                     </p>
+                    <LearnMore name={"Music"} link={"/music"}></LearnMore>
                   </div>
+
                   <div className="grid justify-items-center lg:hidden">
                     <a href="/music">
                       <img
