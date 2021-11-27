@@ -1,11 +1,7 @@
 import { Disclosure} from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function Example() {
+export default function Navbar() {
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -25,7 +21,7 @@ export default function Example() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                    <img className="max-h-10" src="https://cdn.discordapp.com/attachments/692181081872400394/913578865018937354/Logo.png"  />
+                    <img className="max-h-10" alt="Hassu" src="https://cdn.discordapp.com/attachments/692181081872400394/913578865018937354/Logo.png"  />
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {/* Current: "border-red-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
