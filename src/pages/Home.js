@@ -14,7 +14,7 @@ const logos = [
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div className="bg-white animate-fade-in-up">
       <main>
         {/* Hero section */}
         <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
