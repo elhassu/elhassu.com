@@ -1,3 +1,4 @@
+import ReactTooltip from 'react-tooltip'
 import LearnMore from '../components/LearnMore'
 
 const logos = [
@@ -114,7 +115,10 @@ export default function Home() {
               <div className="mt-12 grid grid-cols-2 gap-2 md:grid-cols-3 lg:mt-0 lg:grid-cols-3">
                 {logos.map((logo) => (
                   <div key={logo.name} className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-                    <img className="max-h-20" src={logo.url} alt={logo.name} />
+                    <a data-tip={`${logo.name}`} href="/">
+                      <img className="max-h-20" src={logo.url} alt={logo.name} />
+                    </a>
+                    <ReactTooltip effect="solid" />
                   </div>
                 ))}
               </div>
