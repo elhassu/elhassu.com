@@ -100,12 +100,12 @@ export default function Home() {
         </div>
 
         {/* Programming Languages */}
-        <div className="mt-32 p-16">
+        <div className="bg-yellow-50 mt-32 p-16">
           <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
             <div className="lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
               <div>
                 <h2 className="text-center sm:text-left text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                  Programming Languages &amp; Frameworks Fluent In
+                  Programming Languages <br/> &amp; Frameworks Fluent In
                 </h2>
                 <p className="mt-6 max-w-3xl text-lg leading-7 text-gray-500">
                 </p>
@@ -114,8 +114,8 @@ export default function Home() {
 
               <div className="mt-12 grid grid-cols-2 gap-2 md:grid-cols-3 lg:mt-0 lg:grid-cols-3">
                 {logos.map((logo) => (
-                  <div key={logo.name} className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-                    <a data-tip={`${logo.name}`} href="/">
+                  <div key={logo.name} className="bg-yellow-50 shadow-xl col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+                    <a data-tip={`${logo.name}`}>
                       <img className="max-h-20" src={logo.url} alt={logo.name} />
                     </a>
                     <ReactTooltip effect="solid" />
@@ -127,7 +127,7 @@ export default function Home() {
         </div>
 
         {/* Music */}
-        <section className="bg-white overflow-hidden p-16">
+        <section className="bg-yellow-50  overflow-hidden p-16">
           <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
             <svg
               className="absolute top-full left-0 transform translate-x-80 -translate-y-24 lg:hidden"
@@ -180,7 +180,7 @@ export default function Home() {
                 <a href="/music">
                   <img
                     className="h-64 w-64 rounded-full xl:h-80 xl:w-80"
-                    src="https://cdn.discordapp.com/attachments/901690870846337104/901690924227260466/logo.png"
+                    src="https://cdn.discordapp.com/attachments/913935178899021824/914334492246802492/logo-transparent.png"
                     alt=""
                   />
                 </a>
@@ -225,7 +225,7 @@ export default function Home() {
                   All guitar related personal projects
                 </p>
               </div>
-              <div className="mt-12 grid p-4 justify-items-center rounded">
+              <div className="mt-12 mb-12 grid p-4 justify-items-center rounded">
                 <a href="/music">
                   <img
                     className="h-60 w-60 sm:h-80 sm:w-80 rounded-full"
