@@ -8,7 +8,7 @@ export default function About() {
                     <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
                     <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
                         <div>
-                            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Case Study</h2>
+                            <h2 className="text-base text-red-600 font-semibold tracking-wide uppercase">Case Study</h2>
                             <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                                 Meet Whitney
                             </h3>
@@ -63,7 +63,7 @@ export default function About() {
                                     pellentesque. Blandit amet, sed aenean erat arcu morbi.
                                 </p>
                             </div>
-                            <div className="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
+                            <div className="mt-5 prose prose-red text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
                                 <p>
                                     Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
                                     pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
@@ -102,12 +102,12 @@ export default function About() {
             </div>
             <div className="bg-white">
                 <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-                    <div className="relative bg-white shadow-xl">
+                    <div className="relative bg-white shadow-xl rounded-lg">
                         <h2 className="sr-only">Contact us</h2>
 
                         <div className="grid grid-cols-1 lg:grid-cols-3">
                             {/* Contact information */}
-                            <div className="relative overflow-hidden py-10 px-6 bg-indigo-700 sm:px-10 xl:p-12">
+                            <div className="rounded-lg relative overflow-hidden py-10 px-6 bg-red-700 sm:px-10 xl:p-12">
                                 <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
                                     <svg
                                         className="absolute inset-0 w-full h-full"
@@ -205,7 +205,7 @@ export default function About() {
                                     </svg>
                                 </div>
                                 <h3 className="text-lg font-medium text-white">Contact information</h3>
-                                <p className="mt-6 text-base text-indigo-50 max-w-3xl">
+                                <p className="mt-6 text-base text-red-50 max-w-3xl">
                                     Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor
                                     lacus arcu.
                                 </p>
@@ -213,21 +213,21 @@ export default function About() {
                                     <dt>
                                         <span className="sr-only">Phone number</span>
                                     </dt>
-                                    <dd className="flex text-base text-indigo-50">
-                                        <PhoneIcon className="flex-shrink-0 w-6 h-6 text-indigo-200" aria-hidden="true" />
+                                    <dd className="flex text-base text-red-50">
+                                        <PhoneIcon className="flex-shrink-0 w-6 h-6 text-red-200" aria-hidden="true" />
                                         <span className="ml-3">+1 (555) 123-4567</span>
                                     </dd>
                                     <dt>
                                         <span className="sr-only">Email</span>
                                     </dt>
-                                    <dd className="flex text-base text-indigo-50">
-                                        <MailIcon className="flex-shrink-0 w-6 h-6 text-indigo-200" aria-hidden="true" />
+                                    <dd className="flex text-base text-red-50">
+                                        <MailIcon className="flex-shrink-0 w-6 h-6 text-red-200" aria-hidden="true" />
                                         <span className="ml-3">support@workcation.com</span>
                                     </dd>
                                 </dl>
                                 <ul role="list" className="mt-8 flex space-x-12">
                                     <li>
-                                        <a className="text-indigo-200 hover:text-indigo-100" href="#">
+                                        <a className="text-red-200 hover:text-red-100" href="#">
                                             <span className="sr-only">Facebook</span>
                                             <svg
                                                 width={24}
@@ -246,7 +246,7 @@ export default function About() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="text-indigo-200 hover:text-indigo-100" href="#">
+                                        <a className="text-red-200 hover:text-red-100" href="#">
                                             <span className="sr-only">GitHub</span>
                                             <svg
                                                 width={24}
@@ -265,7 +265,7 @@ export default function About() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="text-indigo-200 hover:text-indigo-100" href="#">
+                                        <a className="text-red-200 hover:text-red-100" href="#">
                                             <span className="sr-only">Twitter</span>
                                             <svg
                                                 width={24}
@@ -300,7 +300,7 @@ export default function About() {
                                                 name="first-name"
                                                 id="first-name"
                                                 autoComplete="given-name"
-                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 border-gray-300 rounded-md"
                                             />
                                         </div>
                                     </div>
@@ -314,7 +314,7 @@ export default function About() {
                                                 name="last-name"
                                                 id="last-name"
                                                 autoComplete="family-name"
-                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 border-gray-300 rounded-md"
                                             />
                                         </div>
                                     </div>
@@ -328,7 +328,7 @@ export default function About() {
                                                 name="email"
                                                 type="email"
                                                 autoComplete="email"
-                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 border-gray-300 rounded-md"
                                             />
                                         </div>
                                     </div>
@@ -347,7 +347,7 @@ export default function About() {
                                                 name="phone"
                                                 id="phone"
                                                 autoComplete="tel"
-                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 border-gray-300 rounded-md"
                                                 aria-describedby="phone-optional"
                                             />
                                         </div>
@@ -361,7 +361,7 @@ export default function About() {
                                                 type="text"
                                                 name="subject"
                                                 id="subject"
-                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 border-gray-300 rounded-md"
                                             />
                                         </div>
                                     </div>
@@ -379,7 +379,7 @@ export default function About() {
                                                 id="message"
                                                 name="message"
                                                 rows={4}
-                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 border border-gray-300 rounded-md"
                                                 aria-describedby="message-max"
                                                 defaultValue={''}
                                             />
@@ -388,7 +388,7 @@ export default function About() {
                                     <div className="sm:col-span-2 sm:flex sm:justify-end">
                                         <button
                                             type="submit"
-                                            className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:w-auto"
+                                            className="transition duration-200 mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:w-auto"
                                         >
                                             Submit
                                         </button>
