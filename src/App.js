@@ -1,6 +1,6 @@
 import {
-  Routes, 
-  Route, 
+  Routes,
+  Route,
   // Link, 
   // Redirect 
 } from "react-router-dom";
@@ -9,21 +9,22 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import About from "./pages/About";
 
 function App() {
   return (
     <>
-    <Navbar />
-    
-    <Routes>
-      <Route path="/" element={<Home />}/>
+      <Navbar />
 
-      {/* <Route path="/about"  element={<></>}/> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <Route path="*" element={<NotFound/>} />
-    </Routes>
+        <Route path="/about" element={<About />} />
 
-    <Footer />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <Footer />
     </>
   );
 }

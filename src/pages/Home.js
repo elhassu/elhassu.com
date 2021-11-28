@@ -1,5 +1,6 @@
 import ReactTooltip from 'react-tooltip'
 import LearnMore from '../components/LearnMore'
+import { Link } from 'react-router-dom'
 
 const logos = [
   { name: 'HTML5', url: 'https://media.discordapp.net/attachments/499936620678742059/913908582376939560/html5-logo.png' },
@@ -57,7 +58,9 @@ export default function Home() {
                     Based in Malta
                   </p>
                 </div>
-                <LearnMore name={"About Me"} link={"about"}></LearnMore>
+                <Link to="/about">
+                  <LearnMore name={"About Me"}></LearnMore>
+                </Link>
               </div>
             </div>
           </div>
@@ -100,21 +103,23 @@ export default function Home() {
         </div>
 
         {/* Programming Languages */}
-        <div className="bg-yellow-50 mt-32 p-16">
+        <div className="mt-32 p-16">
           <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
             <div className="lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
               <div>
                 <h2 className="text-center sm:text-left text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                  Programming Languages <br/> &amp; Frameworks Fluent In
+                  Programming Languages <br /> &amp; Frameworks Fluent In
                 </h2>
                 <p className="mt-6 max-w-3xl text-lg leading-7 text-gray-500">
                 </p>
-                <LearnMore name={"Career"} link={"career"}></LearnMore>
+                <Link to="/career">
+                  <LearnMore name={"Career"}></LearnMore>
+                </Link>
               </div>
 
               <div className="mt-12 grid grid-cols-2 gap-2 md:grid-cols-3 lg:mt-0 lg:grid-cols-3">
                 {logos.map((logo) => (
-                  <div key={logo.name} className="bg-yellow-50 shadow-xl col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+                  <div key={logo.name} className="shadow-xl col-span-1 flex justify-center py-8 px-8 bg-gray-50">
                     <a data-tip={`${logo.name}`}>
                       <img className="max-h-20" src={logo.url} alt={logo.name} />
                     </a>
@@ -127,7 +132,7 @@ export default function Home() {
         </div>
 
         {/* Music */}
-        <section className="bg-yellow-50  overflow-hidden p-16">
+        <section className="overflow-hidden p-16">
           <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
             <svg
               className="absolute top-full left-0 transform translate-x-80 -translate-y-24 lg:hidden"
@@ -189,20 +194,22 @@ export default function Home() {
               <div className="relative lg:ml-10">
                 <blockquote className="relative">
                   <div className="text-2xl leading-9 font-medium text-gray-900">
-                    <h2 className="text-center sm:text-left text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl"> 
-                      Guitarist, Vocalist &amp; <br/> Songwriter at
+                    <h2 className="text-center sm:text-left text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+                      Guitarist, Vocalist &amp; <br /> Songwriter at
                     </h2>
                     <p className="text-center sm:text-left">
                       The local Maltese Heavy Metal band called "Vectis"
                     </p>
-                    <LearnMore name={"Music"} link={"/music"}></LearnMore>
+                    <Link to="/music">
+                      <LearnMore name={"Music"}></LearnMore>
+                    </Link>
                   </div>
 
                   <div className="grid justify-items-center lg:hidden">
                     <a href="/music">
                       <img
                         className="h-60 w-60 sm:h-80 sm:w-80 rounded-full"
-                        src="https://cdn.discordapp.com/attachments/901690870846337104/901690924227260466/logo.png"
+                        src="https://cdn.discordapp.com/attachments/913935178899021824/914334492246802492/logo-transparent.png"
                         alt=""
                       />
                     </a>
@@ -212,11 +219,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         {/* Zenistar Guitars */}
         <div className="sm:mb-32 p-8">
-          <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
+          <div className="shadow-xl mx-auto max-w-md px-8 sm:max-w-3xl sm:px-6 lg:px-16 lg:max-w-7xl">
+            <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
               <div className="text-2xl leading-9 font-medium text-gray-900">
                 <h2 className="text-center sm:text-left text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
                   Keelan's Luthier Page
@@ -228,7 +235,7 @@ export default function Home() {
               <div className="mt-12 mb-12 grid p-4 justify-items-center rounded">
                 <a href="/music">
                   <img
-                    className="h-60 w-60 sm:h-80 sm:w-80 rounded-full"
+                    className="mb-8 h-60 w-60 sm:h-80 sm:w-80 rounded-full"
                     src="https://cdn.discordapp.com/attachments/913935178899021824/913938200827940925/small_logo.png"
                     alt=""
                   />
