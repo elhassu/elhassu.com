@@ -120,9 +120,9 @@ export default function Home() {
               <div className="mt-12 grid grid-cols-2 gap-2 md:grid-cols-3 lg:mt-0 lg:grid-cols-3">
                 {logos.map((logo) => (
                   <div key={logo.name} className="shadow-xl col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-                    <a data-tip={`${logo.name}`}>
+                    <div data-tip={`${logo.name}`}>
                       <img className="max-h-20" src={logo.url} alt={logo.name} />
-                    </a>
+                    </div>
                     <ReactTooltip effect="solid" />
                   </div>
                 ))}
@@ -193,11 +193,11 @@ export default function Home() {
 
               <div className="relative lg:ml-10">
                 <blockquote className="relative">
-                  <div className="text-2xl leading-9 font-medium text-gray-900">
-                    <h2 className="text-center sm:text-left text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+                  <div className="text-2xl leading-9 text-gray-900">
+                    <h2 className="text-center sm:text-left text-3xl font-medium font-extrabold text-gray-900 tracking-tight sm:text-4xl">
                       Guitarist, Vocalist &amp; <br /> Songwriter at
                     </h2>
-                    <p className="text-center sm:text-left">
+                    <p className="font-medium text-center sm:text-left">
                       The local Maltese Heavy Metal band called "Vectis"
                     </p>
                     <Link to="/music">

@@ -54,34 +54,26 @@ export default function Navbar() {
           <Disclosure.Panel className="bg-white absolute z-10 min-w-full animate-fade-in-up sm:hidden">
             <div className="pt-2 pb-4 space-y-1">
               {/* Current: "bg-red-50 border-red-500 text-red-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-              <Disclosure.Button
-                as="a"
-                href="/"
-                className="bg-red-50 border-red-500 text-red-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-              >
-                Home
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/about"
-                className="bg-white border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-              >
-                About
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/career"
-                className="bg-white border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-              >
-                Career
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/music"
-                className="bg-white border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-              >
-                Music
-              </Disclosure.Button>
+              <Link to="/">
+                <div className="bg-red-50 border-red-500 text-red-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                  <Disclosure.Button>Home</Disclosure.Button>
+                </div>
+              </Link>
+              <Link to="/about">
+                <div className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                  <Disclosure.Button>About</Disclosure.Button>
+                </div>
+              </Link>
+              <Link to="/career">
+                <div className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                  <Disclosure.Button>Career</Disclosure.Button>
+                </div>
+              </Link>
+              <Link to="/music">
+                <div className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                  <Disclosure.Button>Music</Disclosure.Button>
+                </div>
+              </Link>
             </div>
           </Disclosure.Panel>
         </>
