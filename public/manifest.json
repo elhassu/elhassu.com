@@ -1,19 +1,19 @@
 {
-  "short_name": "Keelan Vella Zerafa",
-  "name": "Portfolio of upcoming developer and musician based in Malta",
+  "short_name": "Keelan Vella",
+  "name": "Keelan Vella Portfolio",
   "icons": [
     {
-      "src": "icon.ico",
+      "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo.png",
+      "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo.png",
+      "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

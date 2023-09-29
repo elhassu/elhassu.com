@@ -1,250 +1,271 @@
-import ReactTooltip from 'react-tooltip'
-import LearnMore from '../components/LearnMore'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const logos = [
-  { name: 'HTML5', url: 'https://media.discordapp.net/attachments/499936620678742059/913908582376939560/html5-logo.png' },
-  { name: 'CSS3', url: 'https://media.discordapp.net/attachments/499936620678742059/913908584671236156/css3-logo.png' },
-  { name: 'JavaScript', url: 'https://cdn.discordapp.com/attachments/499936620678742059/913908584474095636/javascript-logo.png' },
-  { name: 'PHP', url: 'https://media.discordapp.net/attachments/499936620678742059/913908582662168616/php-logo.png' },
-  { name: 'C#', url: 'https://media.discordapp.net/attachments/499936620678742059/913908583878496266/csharp-logo.png' },
-  { name: 'Java', url: 'https://cdn.discordapp.com/attachments/499936620678742059/913908584180498472/java-logo.png' },
-  { name: 'Python', url: 'https://media.discordapp.net/attachments/499936620678742059/913908583362601001/python-logo.png' },
-  { name: 'SQL', url: 'https://media.discordapp.net/attachments/499936620678742059/913908583710740481/sql-lopo.png' },
-  { name: 'Ionic', url: 'https://cdn.discordapp.com/attachments/499936620678742059/913910842221801512/ionic-logo.png' },
-]
+import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/icons/SocialIcons.jsx";
+import logoBuddy from "@/images/logos/buddy.png";
+import logoLidl from "@/images/logos/lidl.png";
+import logoStarbucks from "@/images/logos/starbucks.svg";
+import image1 from "@/images/photos/image-1.jpg";
+import image2 from "@/images/photos/image-2.jpg";
+import image3 from "@/images/photos/image-3.jpg";
+import image4 from "@/images/photos/image-4.jpg";
+import image5 from "@/images/photos/image-5.jpg";
+import { getDuration } from "@/lib/formatDate";
+import { format } from "date-fns";
+
+function MailIcon(props) {
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			strokeWidth="1.5"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			aria-hidden="true"
+			{...props}
+		>
+			<path
+				d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
+				className="fill-celeste-100 stroke-celeste-400"
+			/>
+			<path
+				d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
+				className="stroke-celeste-400"
+			/>
+		</svg>
+	);
+}
+
+function BriefcaseIcon(props) {
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			strokeWidth="1.5"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			aria-hidden="true"
+			{...props}
+		>
+			<path
+				d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
+				className="fill-celeste-100 stroke-daintree-800"
+			/>
+			<path
+				d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
+				className="stroke-daintree-700"
+			/>
+		</svg>
+	);
+}
+
+function ArrowDownIcon(props) {
+	return (
+		<svg
+			viewBox="0 0 16 16"
+			fill="none"
+			aria-hidden="true"
+			{...props}
+		>
+			<path
+				d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+}
+
+function SocialLink({ icon: Icon, ...props }) {
+	return (
+		<Link
+			className="group -m-1 p-1"
+			{...props}
+		>
+			<Icon className="h-6 w-6 fill-daintree-700 transition group-hover:fill-daintree-800" />
+		</Link>
+	);
+}
+
+function Role({ role }) {
+	let startLabel = typeof role.start === "string" ? role.start : role.start?.label;
+	let startDate = typeof role.start === "string" ? role.start : role.start?.dateTime;
+
+	let endLabel = typeof role.end === "string" ? role.end : role.end?.label;
+	let endDate = typeof role.end === "string" ? role.end : role.end?.dateTime;
+
+	return (
+		<li className="flex gap-4">
+			<div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-daintree-800/5 ring-daintree-900/5 border border-daintree-700/50 bg-daintree-800 ring-0">
+				<img
+					src={role.logo}
+					alt=""
+					className="h-7 w-7 rounded-full"
+				/>
+			</div>
+			<dl className="flex flex-auto flex-wrap gap-x-2">
+				<dt className="sr-only">Company</dt>
+				<dd className="w-full flex-none text-sm font-medium text-daintree-900">{role.company}</dd>
+				<dt className="sr-only">Role</dt>
+				<dd className="text-xs text-celeste-500">
+					{role.title}
+					{getDuration(startDate, endDate)}
+				</dd>
+				{startDate && endDate && (
+					<>
+						<dt className="sr-only">Date</dt>
+						<dd
+							className="ml-auto text-xs text-celeste-400"
+							aria-label={`${startLabel} until ${endLabel}`}
+						>
+							<time dateTime={startDate}>{startLabel}</time> <span aria-hidden="true">—</span>{" "}
+							<time dateTime={endDate}>{endLabel}</time>
+						</dd>
+					</>
+				)}
+			</dl>
+		</li>
+	);
+}
+
+function Resume({ title = "Work", Icon = BriefcaseIcon, resume }) {
+	return (
+		<div className="rounded-2xl border border-daintree-700 p-6">
+			<h2 className="flex text-sm font-semibold text-daintree-800">
+				<Icon className="h-6 w-6 flex-none" />
+				<span className="font-title font-bold text-md ml-3 mt-1 uppercase">{title}</span>
+			</h2>
+			<ol className="mt-6 space-y-4">
+				{resume.map((role, roleIndex) => (
+					<Role
+						key={roleIndex}
+						role={role}
+					/>
+				))}
+			</ol>
+		</div>
+	);
+}
+
+function Photos() {
+	let rotations = ["rotate-2", "-rotate-2", "rotate-2", "rotate-2", "-rotate-2"];
+
+	return (
+		<div className="mt-16 sm:mt-20">
+			<div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+				{[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+					<div
+						key={image.src}
+						className={
+							"relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-celeste-100 sm:w-72 sm:rounded-2xl " +
+							rotations[imageIndex % rotations.length]
+						}
+					>
+						<img
+							src={image}
+							alt=""
+							sizes="(min-width: 640px) 18rem, 11rem"
+							className="absolute inset-0 h-full w-full object-cover"
+						/>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+}
 
 export default function Home() {
-  return (
-    <div className="bg-white animate-fade-in-up">
-      <main>
-        {/* Hero section */}
-        <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
-          <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
-            <div>
-              <div className="mt-44">
-
-                <div className="sm:hidden mt-0 sm:max-w-xl">
-                  <h1 className="text-center sm:text-left text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
-                    Keelan Vella Zerafa
-                  </h1>
-                  <p className="text-center sm:text-left mt-6 text-xl text-gray-500">
-                    Part-Time Musician
-                  </p>
-                  <p className="text-center sm:text-left mt-2 text-xl text-gray-500">
-                    Full-Time Software Developer
-                  </p>
-                  <p className="text-center sm:text-left mt-2 text-xl text-gray-500">
-                    Enthusiast Luthier
-                  </p>
-                  <p className="text-center sm:text-left mt-4 text-l text-gray-500">
-                    Based in Malta
-                  </p>
-                </div>
-                <div className="hidden sm:block mt-0 sm:max-w-xl">
-                  <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
-                    Keelan Vella Zerafa
-                  </h1>
-                  <p className="mt-6 text-xl text-gray-500">
-                    Part-Time Musician,
-                  </p>
-                  <p className="mt-2 text-xl text-gray-500">
-                    Full-Time Software Developer,
-                  </p>
-                  <p className="mt-2 text-xl text-gray-500">
-                    Enthusiast Luthier
-                  </p>
-                  <p className="mt-4 text-l text-gray-500">
-                    Based in Malta
-                  </p>
-                </div>
-                <Link to="/about">
-                  <LearnMore name={"About Me"}></LearnMore>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
-            <div className="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-              <div className="hidden sm:hidden md:block">
-                <div className="absolute inset-y-0 left-1/2 w-screen bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full" />
-                <svg
-                  className="absolute top-8 right-1/2 -mr-3 lg:m-0 lg:left-0"
-                  width={404}
-                  height={392}
-                  fill="none"
-                  viewBox="0 0 404 392"
-                >
-                  <defs>
-                    <pattern
-                      id="837c3e70-6c3a-44e6-8854-cc48c737b659"
-                      x={0}
-                      y={0}
-                      width={20}
-                      height={20}
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
-                    </pattern>
-                  </defs>
-                  <rect width={404} height={392} fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)" />
-                </svg>
-              </div>
-              <div className="hidden sm:block relative bg-white pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
-                <img
-                  className="rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none"
-                  src="https://cdn.discordapp.com/attachments/692181081872400394/913578865018937354/Logo.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Programming Languages */}
-        <div className="mt-32 p-16">
-          <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
-              <div>
-                <h2 className="text-center sm:text-left text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                  Programming Languages <br /> &amp; Frameworks Fluent In
-                </h2>
-                <p className="mt-6 max-w-3xl text-lg leading-7 text-gray-500">
-                </p>
-                <Link to="/career">
-                  <LearnMore name={"Career"}></LearnMore>
-                </Link>
-              </div>
-
-              <div className="mt-12 grid grid-cols-2 gap-2 md:grid-cols-3 lg:mt-0 lg:grid-cols-3">
-                {logos.map((logo) => (
-                  <div key={logo.name} className="shadow-xl col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-                    <div data-tip={`${logo.name}`}>
-                      <img className="max-h-20" src={logo.url} alt={logo.name} />
-                    </div>
-                    <ReactTooltip effect="solid" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Music */}
-        <section className="overflow-hidden p-16">
-          <div className="relative max-w-7xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
-            <svg
-              className="absolute top-full left-0 transform translate-x-80 -translate-y-24 lg:hidden"
-              width={784}
-              height={404}
-              fill="none"
-              viewBox="0 0 784 404"
-              aria-hidden="true"
-            >
-              <defs>
-                <pattern
-                  id="e56e3f81-d9c1-4b83-a3ba-0d0ac8c32f32"
-                  x={0}
-                  y={0}
-                  width={20}
-                  height={20}
-                  patternUnits="userSpaceOnUse"
-                >
-                  <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
-                </pattern>
-              </defs>
-              <rect width={784} height={404} fill="url(#e56e3f81-d9c1-4b83-a3ba-0d0ac8c32f32)" />
-            </svg>
-
-            <svg
-              className="hidden lg:block absolute right-full top-1/2 transform translate-x-1/2 -translate-y-1/2"
-              width={404}
-              height={784}
-              fill="none"
-              viewBox="0 0 404 784"
-              aria-hidden="true"
-            >
-              <defs>
-                <pattern
-                  id="56409614-3d62-4985-9a10-7ca758a8f4f0"
-                  x={0}
-                  y={0}
-                  width={20}
-                  height={20}
-                  patternUnits="userSpaceOnUse"
-                >
-                  <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
-                </pattern>
-              </defs>
-              <rect width={404} height={784} fill="url(#56409614-3d62-4985-9a10-7ca758a8f4f0)" />
-            </svg>
-
-            <div className="relative lg:flex lg:items-center">
-              <div className="hidden lg:block lg:flex-shrink-0">
-                <a href="/music">
-                  <img
-                    className="h-64 w-64 rounded-full xl:h-80 xl:w-80"
-                    src="https://cdn.discordapp.com/attachments/913935178899021824/914334492246802492/logo-transparent.png"
-                    alt=""
-                  />
-                </a>
-              </div>
-
-              <div className="relative lg:ml-10">
-                <blockquote className="relative">
-                  <div className="text-2xl leading-9 text-gray-900">
-                    <h2 className="text-center sm:text-left text-3xl font-medium font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                      Guitarist, Vocalist &amp; <br /> Songwriter at
-                    </h2>
-                    <p className="font-medium text-center sm:text-left">
-                      The local Maltese Heavy Metal band called "Vectis"
-                    </p>
-                    <Link to="/music">
-                      <LearnMore name={"Music"}></LearnMore>
-                    </Link>
-                  </div>
-
-                  <div className="grid justify-items-center lg:hidden">
-                    <a href="/music">
-                      <img
-                        className="h-60 w-60 sm:h-80 sm:w-80 rounded-full"
-                        src="https://cdn.discordapp.com/attachments/913935178899021824/914334492246802492/logo-transparent.png"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Zenistar Guitars */}
-        <div className="sm:mb-32 p-8">
-          <div className="shadow-xl mx-auto max-w-md px-8 sm:max-w-3xl sm:px-6 lg:px-16 lg:max-w-7xl">
-            <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
-              <div className="text-2xl leading-9 font-medium text-gray-900">
-                <h2 className="text-center sm:text-left text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                  Keelan's Luthier Page
-                </h2>
-                <p className="text-center sm:text-left">
-                  All guitar related personal projects
-                </p>
-              </div>
-              <div className="mt-12 mb-12 grid p-4 justify-items-center rounded">
-                <a href="/music">
-                  <img
-                    className="mb-8 h-60 w-60 sm:h-80 sm:w-80 rounded-full"
-                    src="https://cdn.discordapp.com/attachments/913935178899021824/913938200827940925/small_logo.png"
-                    alt=""
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-  )
+	return (
+		<>
+			<div className="ml-16 pt-20 uppercase">
+				<h2 className="font-title text-5xl leading-snug text-daintree-800 font-semibold">Keelan</h2>
+				<h1 className="font-title text-7xl leading-10 tracking-widest font-bold text-daintree-900">Vella</h1>
+				<h3 className="font-title text-xl leading-relaxed tracking-widest text-daintree-900 font-bold">
+					Full Stack Developer
+				</h3>
+			</div>
+			<p className="mx-16 mt-6 text-base text-daintree-800">
+				I’m Keelan, a full stack developer and entrepreneur based in Malta.
+			</p>
+			<div className="ml-16 mt-6 flex gap-6">
+				<SocialLink
+					to="https://twitter.com"
+					aria-label="Follow on Twitter"
+					icon={TwitterIcon}
+				/>
+				<SocialLink
+					to="https://instagram.com"
+					aria-label="Follow on Instagram"
+					icon={InstagramIcon}
+				/>
+				<SocialLink
+					to="https://github.com/elhassu"
+					aria-label="Follow on GitHub"
+					icon={GitHubIcon}
+				/>
+				<SocialLink
+					to="https://www.linkedin.com/in/keelan-vella/"
+					aria-label="Follow on LinkedIn"
+					icon={LinkedInIcon}
+				/>
+			</div>
+			<div className="mt-8 mx-auto px-16 grid max-w-xl grid-cols-1 gap-y-20 gap-8 lg:max-w-none lg:grid-cols-2">
+				<div className="space-y-10">
+					<Resume
+						resume={[
+							{
+								company: "Buddy Ltd",
+								title: "Junior Software Developer",
+								logo: logoBuddy,
+								start: "11/2021",
+								end: {
+									label: "Present",
+									dateTime: format(new Date(), "MM/yyyy")
+								},
+							},
+							{
+								company: "Lidl Malta",
+								title: "Sales Assistant",
+								logo: logoLidl,
+								start: "08/2020",
+								end: "01/2022",
+							},
+							{
+								company: "Ambika Confectionary",
+								title: "Sales Assistant",
+								logo: logoStarbucks,
+								start: "06/2018",
+								end: "06/2019",
+							},
+						]}
+					/>
+				</div>
+				<div className="space-y-10">
+					<Resume
+						{...{
+							title: "Education",
+							resume: [
+								{
+									company: "Fireship.io",
+									title: "NextJS Firebase Course",
+									logo: logoBuddy,
+								},
+								{
+									company: "MCAST",
+									title: "Advanced Diploma in Software Development",
+									logo: logoLidl,
+								},
+								{
+									company: "Malta Visual & Performing Arts School",
+									title: "Matriculation Certificate",
+									logo: logoStarbucks,
+								},
+							],
+						}}
+					/>
+				</div>
+			</div>
+			<Photos />
+		</>
+	);
 }
