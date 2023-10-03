@@ -3,6 +3,27 @@ import "./App.css";
 import { ReactComponent as Hexagon } from "@/shapes/hexagon/vertical.svg";
 import { Footer } from "@/common/Footer";
 import Home from "pages/Home";
+import NotFound from "pages/NotFound";
+
+const paths = [
+	{
+		path: "/",
+		element: <Home />,
+	},
+	{
+		path: "/about",
+		element: <> </>,
+		// element: <About />,
+	},
+	{
+		path: "/projects",
+		element: <> </>,
+	},
+	{
+		path: "*",
+		element: <NotFound />,
+	},
+];
 
 function App() {
 	return (
@@ -24,10 +45,13 @@ function App() {
 					</div>
 				</div>
 				<Routes>
-					<Route
-						path="/"
-						element={<Home />}
-					/>
+					{paths.map(({ path, element }) => (
+						<Route
+							key={path}
+							path={path}
+							element={element}
+						/>
+					))}
 				</Routes>
 				<Footer />
 			</div>

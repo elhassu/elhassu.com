@@ -1,19 +1,100 @@
 import { BriefcaseIcon } from "@/icons/Icons.jsx";
-import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/icons/SocialIcons.jsx";
+import { GitHubIcon, InstagramIcon, LinkedInIcon } from "@/icons/SocialIcons.jsx";
 import logoBuddy from "@/images/logos/buddy.png";
 import logoFireShip from "@/images/logos/fireship.jpeg";
 import logoLidl from "@/images/logos/lidl.png";
 import logoMCAST from "@/images/logos/mcast.png";
-import logoMVPA from "@/images/logos/mvpa.jpeg";
+import logoMVPA from "@/images/logos/mvpa.png";
+import logoMaze from "@/images/logos/maze-digital.png";
 import image1 from "@/images/photos/image-1.jpg";
 import image2 from "@/images/photos/image-2.jpg";
 import image3 from "@/images/photos/image-3.jpg";
 import image4 from "@/images/photos/image-4.jpg";
 import image5 from "@/images/photos/image-5.jpg";
 import { getDuration } from "@/lib/formatDate";
-import { ArrowTopRightOnSquareIcon, BuildingStorefrontIcon } from "@heroicons/react/24/solid";
+import {
+	ArchiveBoxIcon,
+	ArrowTopRightOnSquareIcon,
+	BuildingStorefrontIcon,
+	GlobeAltIcon,
+	MusicalNoteIcon,
+} from "@heroicons/react/24/solid";
 import { AcademicHat } from "assets/icons/Icons";
 import { format } from "date-fns";
+
+const experience = [
+	{
+		company: "Buddy HR",
+		title: "Junior Full Stack Developer",
+		href: "https://www.buddy.hr",
+		logo: logoBuddy,
+		start: "11/2021",
+		end: {
+			label: "Present",
+			dateTime: format(new Date(), "MM/yyyy"),
+		},
+	},
+	{
+		company: "Maze Digital",
+		title: "Junior Full Stack Developer",
+		href: "https://www.maze.digital",
+		logo: logoMaze,
+		start: "06/2021",
+		end: "01/2022",
+	},
+	{
+		company: "Lidl Malta",
+		title: "Sales Assistant",
+		href: "https://www.lidl.com.mt",
+		round: true,
+		logo: logoLidl,
+		start: "08/2020",
+		end: "12/2020",
+	},
+	{
+		company: "Ambika Confectionary",
+		title: "Sales Assistant",
+		logo: BuildingStorefrontIcon,
+		start: "06/2020",
+		end: "06/2019",
+	},
+];
+
+const education = [
+	{
+		company: "Fireship.io",
+		title: "NextJS Firebase Course",
+		logo: logoFireShip,
+		round: true,
+	},
+	{
+		company: "MCAST",
+		title: "Advanced Diploma in Software Development",
+		logo: logoMCAST,
+		round: true,
+	},
+	{
+		company: "Malta Visual & Performing Arts School",
+		title: "Matriculation Certificate",
+		logo: logoMVPA,
+		round: true,
+	},
+];
+
+const projects = [
+	{
+		company: "Personal Website",
+		title: "www.elhassu.com",
+		logo: GlobeAltIcon,
+	},
+	{
+		company: "Vectis",
+		title: "Guitars",
+		logo: MusicalNoteIcon,
+		start: "11/2019",
+		end: "03/2022",
+	},
+];
 
 function SocialLink({ icon: Icon, ...props }) {
 	return (
@@ -28,44 +109,44 @@ function SocialLink({ icon: Icon, ...props }) {
 	);
 }
 
-function Role({ role }) {
-	let startLabel = typeof role.start === "string" ? role.start : role.start?.label;
-	let startDate = typeof role.start === "string" ? role.start : role.start?.dateTime;
+function Showcase({ showcase }) {
+	let startLabel = typeof showcase.start === "string" ? showcase.start : showcase.start?.label;
+	let startDate = typeof showcase.start === "string" ? showcase.start : showcase.start?.dateTime;
 
-	let endLabel = typeof role.end === "string" ? role.end : role.end?.label;
-	let endDate = typeof role.end === "string" ? role.end : role.end?.dateTime;
+	let endLabel = typeof showcase.end === "string" ? showcase.end : showcase.end?.label;
+	let endDate = typeof showcase.end === "string" ? showcase.end : showcase.end?.dateTime;
 
 	return (
 		<li className="flex gap-4">
 			<div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-daintree-800/5 ring-daintree-900/5 border border-daintree-700/50 bg-daintree-800 ring-0">
-				{typeof role?.logo === "object" ? (
-					<role.logo className="h-7 w-7 rounded-full text-white/60" />
+				{typeof showcase?.logo === "object" ? (
+					<showcase.logo className="h-9 p-1 text-celeste-200" />
 				) : (
 					<img
-						src={role.logo}
+						src={showcase.logo}
 						alt=""
-						className="h-7 w-7 rounded-full "
+						className={`h-9 p-1 object-contain ${showcase.round ? "rounded-full" : ""}`}
 					/>
 				)}
 			</div>
 			<dl className="flex flex-auto flex-wrap gap-x-2">
 				<dt className="sr-only">Company</dt>
 				<dd className="w-full flex-none text-sm font-medium text-daintree-900">
-						{role.company}
-						{role.href && (
-							<a
-								className="inline-flex justify-start align-baseline"
-								href={role.href}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<ArrowTopRightOnSquareIcon className="h-4 w-4 ml-1 text-daintree-800" />
-							</a>
-						)}
+					{showcase.company}
+					{showcase.href && (
+						<a
+							className="inline-flex justify-start align-baseline"
+							href={showcase.href}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<ArrowTopRightOnSquareIcon className="h-4 w-4 ml-1 text-daintree-800" />
+						</a>
+					)}
 				</dd>
-				<dt className="sr-only">Role</dt>
+				<dt className="sr-only">Showcase</dt>
 				<dd className="text-xs text-celeste-500">
-					{role.title}
+					{showcase.title}
 					{getDuration(startDate, endDate)}
 				</dd>
 				{startDate && endDate && (
@@ -85,7 +166,7 @@ function Role({ role }) {
 	);
 }
 
-function Resume({ title = "Work", Icon = BriefcaseIcon, resume }) {
+function Portfolio({ title = "Experience", Icon = BriefcaseIcon, portfolio }) {
 	return (
 		<div className="rounded-2xl border border-daintree-700 p-6 h-full">
 			<h2 className="flex text-sm font-semibold text-daintree-800">
@@ -93,10 +174,10 @@ function Resume({ title = "Work", Icon = BriefcaseIcon, resume }) {
 				<span className="font-title font-bold text-md ml-3 mt-1 uppercase">{title}</span>
 			</h2>
 			<ol className="mt-6 space-y-4">
-				{resume.map((role, roleIndex) => (
-					<Role
-						key={roleIndex}
-						role={role}
+				{portfolio.map((showcase, showcaseIndex) => (
+					<Showcase
+						key={showcaseIndex}
+						showcase={showcase}
 					/>
 				))}
 			</ol>
@@ -148,12 +229,7 @@ export default function Home() {
 			</p>
 			<div className="ml-16 mt-6 flex gap-6">
 				<SocialLink
-					href="https://twitter.com"
-					aria-label="Follow on Twitter"
-					icon={TwitterIcon}
-				/>
-				<SocialLink
-					href="https://instagram.com"
+					href="https://www.instagram.com/keelan_velafa/"
 					aria-label="Follow on Instagram"
 					icon={InstagramIcon}
 				/>
@@ -170,63 +246,22 @@ export default function Home() {
 			</div>
 			<div className="mt-8 mx-auto px-8 md:px-16 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none lg:grid-cols-2">
 				<div className="space-y-6">
-					<Resume
-						resume={[
-							{
-								company: "Buddy HR",
-								title: "Junior Full Stack Developer",
-								href: "https://www.buddy.hr",
-								logo: logoBuddy,
-								start: "11/2021",
-								end: {
-									label: "Present",
-									dateTime: format(new Date(), "MM/yyyy"),
-								},
-							},
-							{
-								company: "Lidl Malta",
-								title: "Sales Assistant",
-								href: "https://www.lidl.com.mt",
-								logo: logoLidl,
-								start: "08/2020",
-								end: "12/2020",
-							},
-							{
-								company: "Ambika Confectionary",
-								title: "Sales Assistant",
-								logo: BuildingStorefrontIcon,
-								start: "06/2020",
-								end: "06/2019",
-							},
-						]}
-					/>
+					<Portfolio portfolio={experience} />
 				</div>
 				<div className="space-y-10">
-					<Resume
+					<Portfolio
 						{...{
 							title: "Education",
 							Icon: AcademicHat,
-							resume: [
-								{
-									company: "Fireship.io",
-									title: "NextJS Firebase Course",
-									logo: logoFireShip,
-								},
-								{
-									company: "MCAST",
-									title: "Advanced Diploma in Software Development",
-									logo: logoMCAST,
-								},
-								{
-									company: "Malta Visual & Performing Arts School",
-									title: "Matriculation Certificate",
-									logo: logoMVPA,
-								},
-							],
+							portfolio: education,
 						}}
 					/>
 				</div>
 			</div>
+			<div className="mt-8 mx-auto px-8 md:px-16 lg:px-36 xl:px-52 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none">
+				<Portfolio {...{ title: "Projects", Icon: ArchiveBoxIcon, portfolio: projects }} />
+			</div>
+
 			<Photos />
 		</>
 	);
