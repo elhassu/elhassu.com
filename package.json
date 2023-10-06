@@ -1,6 +1,6 @@
 {
   "name": "elhassu.com",
-  "homepage": "www.elhassu.com",
+  "homepage": "https://www.elhassu.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "predeploy": "npm run build",
+    "predeploy": "npm i && npm run build",
     "deploy": "gh-pages -d build",
     "build": "craco build",
     "test": "craco test",
