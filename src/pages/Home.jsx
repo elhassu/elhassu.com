@@ -11,7 +11,7 @@ import image2 from "@/images/photos/image-2.jpg";
 import image3 from "@/images/photos/image-3.jpg";
 import image4 from "@/images/photos/image-4.jpg";
 import image5 from "@/images/photos/image-5.jpg";
-import { getDuration } from "@/lib/formatDate";
+import { getDuration, getMonthYear } from "@/lib/formatDate";
 import {
 	ArchiveBoxIcon,
 	ArrowTopRightOnSquareIcon,
@@ -19,8 +19,8 @@ import {
 	GlobeAltIcon,
 	MusicalNoteIcon,
 } from "@heroicons/react/24/solid";
-import { AcademicHat } from "assets/icons/Icons";
-import { format } from "date-fns";
+import { AcademicHat } from "@/icons/Icons";
+import { Link } from "react-router-dom";
 
 const experience = [
 	{
@@ -31,7 +31,7 @@ const experience = [
 		start: "11/2021",
 		end: {
 			label: "Present",
-			dateTime: format(new Date(), "MM/yyyy"),
+			dateTime: getMonthYear(new Date()),
 		},
 	},
 	{
@@ -98,14 +98,14 @@ const projects = [
 
 function SocialLink({ icon: Icon, ...props }) {
 	return (
-		<a
+		<Link
 			className="group -m-1 p-1"
 			{...props}
 			target="_blank"
 			rel="noreferrer"
 		>
 			<Icon className="h-6 w-6 fill-daintree-700 transition group-hover:fill-daintree-800" />
-		</a>
+		</Link>
 	);
 }
 
@@ -229,21 +229,22 @@ export default function Home() {
 			</p>
 			<div className="ml-16 mt-6 flex gap-6">
 				<SocialLink
-					href="https://www.instagram.com/keelan_velafa/"
+					to="https://www.instagram.com/keelan_velafa/"
 					aria-label="Follow on Instagram"
 					icon={InstagramIcon}
 				/>
 				<SocialLink
-					href="https://github.com/elhassu"
+					to="https://github.com/elhassu"
 					aria-label="Follow on GitHub"
 					icon={GitHubIcon}
 				/>
 				<SocialLink
-					href="https://www.linkedin.com/in/keelan-vella/"
+					to="https://www.linkedin.com/in/keelan-vella/"
 					aria-label="Follow on LinkedIn"
 					icon={LinkedInIcon}
 				/>
 			</div>
+
 			<div className="mt-8 mx-auto px-8 md:px-16 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none lg:grid-cols-2">
 				<div className="space-y-6">
 					<Portfolio portfolio={experience} />
@@ -258,11 +259,12 @@ export default function Home() {
 					/>
 				</div>
 			</div>
-			<div className="mt-8 mx-auto px-8 md:px-16 lg:px-36 xl:px-52 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none">
-				<Portfolio {...{ title: "Projects", Icon: ArchiveBoxIcon, portfolio: projects }} />
-			</div>
 
 			<Photos />
+
+			<div className="mt-16 mx-auto px-8 md:px-16 lg:px-36 xl:px-52 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none">
+				<Portfolio {...{ title: "Projects", Icon: ArchiveBoxIcon, portfolio: projects }} />
+			</div>
 		</>
 	);
 }

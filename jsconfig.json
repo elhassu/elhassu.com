@@ -1,13 +1,19 @@
 {
-    "compilerOptions": {
-        "baseUrl": "src",
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "jsx": "react",
+    "noImplicitAny": false,
         "paths": {
             "@/common": ["src/common"],
             "@/shapes": ["src/assets/shapes"],
             "@/images": ["src/assets/images"],
             "@/lib": ["src/lib"],
-            "@/icons": ["src/assets/icons"]
+            "@/icons": ["src/assets/icons"],
+            "@/pages": ["src/pages/*"]
         }
-    },
+  },
     "exclude": ["node_modules", "**/node_modules/*"]
 }

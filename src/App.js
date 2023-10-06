@@ -2,28 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { ReactComponent as Hexagon } from "@/shapes/hexagon/vertical.svg";
 import { Footer } from "@/common/Footer";
-import Home from "pages/Home";
-import NotFound from "pages/NotFound";
-
-const paths = [
-	{
-		path: "/",
-		element: <Home />,
-	},
-	{
-		path: "/about",
-		element: <> </>,
-		// element: <About />,
-	},
-	{
-		path: "/projects",
-		element: <> </>,
-	},
-	{
-		path: "*",
-		element: <NotFound />,
-	},
-];
+import {routes} from "@/lib/Paths";
 
 function App() {
 	return (
@@ -45,7 +24,7 @@ function App() {
 					</div>
 				</div>
 				<Routes>
-					{paths.map(({ path, element }) => (
+					{routes.map(({ path, element }) => (
 						<Route
 							key={path}
 							path={path}
