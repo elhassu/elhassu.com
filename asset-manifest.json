@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/www.elhassu.com/static/css/main.cafd8c01.css",
-    "main.js": "/www.elhassu.com/static/js/main.d9c95a6b.js",
-    "static/js/787.a55384d5.chunk.js": "/www.elhassu.com/static/js/787.a55384d5.chunk.js",
-    "static/media/portrait.jpg": "/www.elhassu.com/static/media/portrait.48789e752b2df0eb3f73.jpg",
-    "static/media/image-2.jpg": "/www.elhassu.com/static/media/image-2.3648296caca5817fad4c.jpg",
-    "static/media/image-4.jpg": "/www.elhassu.com/static/media/image-4.d87548e57ed25fcd7227.jpg",
-    "static/media/image-5.jpg": "/www.elhassu.com/static/media/image-5.279326113c50261b01de.jpg",
-    "static/media/mvpa.png": "/www.elhassu.com/static/media/mvpa.aebf985e69db7921fe6f.png",
-    "static/media/mcast.png": "/www.elhassu.com/static/media/mcast.d38fe2e95e252e084d21.png",
-    "static/media/buddy.png": "/www.elhassu.com/static/media/buddy.f946cdb962fad0595088.png",
-    "static/media/lidl.png": "/www.elhassu.com/static/media/lidl.1df6bbcc3b2490710e2c.png",
-    "static/media/image-1.jpg": "/www.elhassu.com/static/media/image-1.4e04318962ebf9f27b94.jpg",
-    "static/media/fireship.jpeg": "/www.elhassu.com/static/media/fireship.c92bed056abb0eee13cb.jpeg",
-    "static/media/image-3.jpg": "/www.elhassu.com/static/media/image-3.a4d81c0e138c73160472.jpg",
-    "index.html": "/www.elhassu.com/index.html",
-    "static/media/vertical.svg": "/www.elhassu.com/static/media/vertical.b4bed9aa8b2583abc144cf100f31ea54.svg",
-    "main.cafd8c01.css.map": "/www.elhassu.com/static/css/main.cafd8c01.css.map",
-    "main.d9c95a6b.js.map": "/www.elhassu.com/static/js/main.d9c95a6b.js.map",
-    "787.a55384d5.chunk.js.map": "/www.elhassu.com/static/js/787.a55384d5.chunk.js.map"
+    "main.css": "/static/css/main.cafd8c01.css",
+    "main.js": "/static/js/main.153551a6.js",
+    "static/js/651.4ebdbb8f.chunk.js": "/static/js/651.4ebdbb8f.chunk.js",
+    "static/media/portrait.jpg": "/static/media/portrait.48789e752b2df0eb3f73.jpg",
+    "static/media/image-2.jpg": "/static/media/image-2.3648296caca5817fad4c.jpg",
+    "static/media/image-4.jpg": "/static/media/image-4.d87548e57ed25fcd7227.jpg",
+    "static/media/image-5.jpg": "/static/media/image-5.279326113c50261b01de.jpg",
+    "static/media/mvpa.png": "/static/media/mvpa.aebf985e69db7921fe6f.png",
+    "static/media/mcast.png": "/static/media/mcast.d38fe2e95e252e084d21.png",
+    "static/media/buddy.png": "/static/media/buddy.f946cdb962fad0595088.png",
+    "static/media/lidl.png": "/static/media/lidl.1df6bbcc3b2490710e2c.png",
+    "static/media/image-1.jpg": "/static/media/image-1.4e04318962ebf9f27b94.jpg",
+    "static/media/fireship.jpeg": "/static/media/fireship.c92bed056abb0eee13cb.jpeg",
+    "static/media/image-3.jpg": "/static/media/image-3.a4d81c0e138c73160472.jpg",
+    "index.html": "/index.html",
+    "static/media/vertical.svg": "/static/media/vertical.b4bed9aa8b2583abc144cf100f31ea54.svg",
+    "main.cafd8c01.css.map": "/static/css/main.cafd8c01.css.map",
+    "main.153551a6.js.map": "/static/js/main.153551a6.js.map",
+    "651.4ebdbb8f.chunk.js.map": "/static/js/651.4ebdbb8f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cafd8c01.css",
-    "static/js/main.d9c95a6b.js"
+    "static/js/main.153551a6.js"
   ]
 }
