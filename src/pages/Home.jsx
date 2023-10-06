@@ -64,11 +64,13 @@ const education = [
 	{
 		company: "Fireship.io",
 		title: "NextJS Firebase Course",
+		href: "https://fireship.io",
 		logo: logoFireShip,
 		round: true,
 	},
 	{
 		company: "MCAST",
+		href: "https://mcast.edu.mt",
 		title: "Advanced Diploma in Software Development",
 		logo: logoMCAST,
 		round: true,
