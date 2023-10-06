@@ -227,7 +227,8 @@ export default function Home() {
 				</h3>
 			</div>
 			<p className="mx-16 mt-6 text-sm md:text-base text-daintree-800">
-				I'm Keelan, a full stack developer and entrepreneur based in Malta.
+				I'm Keelan, an entrepreneur and a Junior Full Stack Developer with a relentless passion for software
+				development
 			</p>
 			<div className="ml-16 mt-6 flex gap-6">
 				<SocialLink

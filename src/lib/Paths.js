@@ -11,10 +11,10 @@ const components = {
 		label: "About",
 		element: <About />,
 	},
-	"/projects": {
-		label: "Projects",
-		element: <></>,
-	},
+	// "/projects": {
+	// 	label: "Projects",
+	// 	element: <></>,
+	// },
 };
 
 export const routes = Object.entries(components)
