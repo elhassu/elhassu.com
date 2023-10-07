@@ -58,7 +58,7 @@ export function Header() {
 							leaveFrom="opacity-100"
 							leaveTo="opacity-0"
 						>
-							<Popover.Overlay className="fixed inset-0 z-50 backdrop-blur-sm" />
+							<Popover.Overlay className="fixed inset-0 bg-black/20 z-50 backdrop-blur-sm" />
 						</Transition.Child>
 						<Transition.Child
 							as={Fragment}
