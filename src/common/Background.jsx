@@ -3,7 +3,6 @@ import { ReactComponent as Hexagon } from "@/shapes/hexagon/vertical.svg";
 function ColouredHexagon() {
 	const offset = Math.floor(Math.random() * 3);
 	const colorOffset = offset+7
-    console.log(colorOffset)
 	return <Hexagon className={`text-daintree-${colorOffset}00 h-36 w-32`} />;
 }
 

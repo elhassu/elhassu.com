@@ -1,6 +1,7 @@
 import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
 import About from "@/pages/About";
+import Projects from "@/pages/Projects";
 
 const components = {
 	"/": {
@@ -11,10 +12,10 @@ const components = {
 		label: "About",
 		element: <About />,
 	},
-	// "/projects": {
-	// 	label: "Projects",
-	// 	element: <></>,
-	// },
+	"/projects": {
+		label: "Projects",
+		element: <Projects />,
+	},
 };
 
 export const routes = Object.entries(components)

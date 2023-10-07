@@ -46,7 +46,7 @@ export function Header() {
 				<Popover>
 					<Popover.Button className="group flex items-center rounded-full bg-celeste-100/90 px-4 py-2 text-sm font-medium text-celeste-800 shadow-lg shadow-celeste-800/5 ring-1 ring-celeste-900/5 backdrop-blur">
 						Menu
-						<ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+						<ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700" />
 					</Popover.Button>
 					<Transition.Root>
 						<Transition.Child
@@ -58,7 +58,7 @@ export function Header() {
 							leaveFrom="opacity-100"
 							leaveTo="opacity-0"
 						>
-							<Popover.Overlay className="fixed inset-0 z-50 backdrop-blur-sm dark:bg-black/80" />
+							<Popover.Overlay className="fixed inset-0 z-50 backdrop-blur-sm" />
 						</Transition.Child>
 						<Transition.Child
 							as={Fragment}
