@@ -13,7 +13,6 @@
     "craco-alias": "^3.0.1",
     "date-fns": "^2.30.0",
     "firebase": "^10.4.0",
-    "gh-pages": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
@@ -23,7 +22,7 @@
   "scripts": {
     "start": "craco start",
     "predeploy": "npm i && npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run predeploy && firebase deploy",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject"
