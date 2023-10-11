@@ -12,7 +12,7 @@ const projects = [
 	},
 	{
 		name: "Personal Website",
-		description: "My personal website, built with React.js & Tailwind CSS. Hosted using GitHub Pages.",
+		description: "My personal website, built with React.js & Tailwind CSS. Hosted using Firebase.",
 		logo: GlobeAltIcon,
 		link: { href: "https://www.github.com/elhassu/elhassu.com", label: "github.com" },
 	},
