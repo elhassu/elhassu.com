@@ -36,7 +36,7 @@ export default function Projects() {
 						as="li"
 						key={project.name}
 					>
-						<div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-celeste-800/5 ring-1 ring-celeste-900/5">
+						<div className="relative z-0 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-celeste-800/5 ring-1 ring-celeste-900/5">
 							{typeof project?.logo === "object" ? (
 								<project.logo className="h-9 p-1 text-daintree-800" />
 							) : (
@@ -54,7 +54,7 @@ export default function Projects() {
 							<span className="group-hover:text-daintree-800">{project.description}</span>
 						</Card.Description>
 						{project.link?.label && (
-							<p className="relative z-10 mt-6 flex text-sm font-medium text-celeste-200 transition group-hover:text-daintree-600">
+							<p className="relative mt-6 flex text-sm font-medium text-celeste-200 transition group-hover:text-daintree-600">
 								<LinkIcon className="h-6 w-6 flex-none" />
 								<span className="ml-2">{project.link.label}</span>
 							</p>

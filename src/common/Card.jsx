@@ -30,8 +30,8 @@ Card.Link = function CardLink({ children, ...props }) {
     <>
       <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-daintree-700 opacity-0 transition group-hover:scale-100 group-hover:opacity-25 sm:-inset-x-6 sm:rounded-2xl" />
       <Link {...props} target={props.to ? '_blank' : undefined}>
-        <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
-        <span className="relative z-10">{children}</span>
+        <span className="absolute -inset-x-4 -inset-y-6 z-0 sm:-inset-x-6 sm:rounded-2xl" />
+        <span className="relative z-0">{children}</span>
       </Link>
     </>
   )
@@ -49,7 +49,7 @@ Card.Title = function CardTitle({ as, href, children }) {
 
 Card.Description = function CardDescription({ children }) {
   return (
-    <p className="relative z-10 mt-2 text-sm text-zinc-600">
+    <p className="relative z-0 mt-2 text-sm text-zinc-600">
       {children}
     </p>
   )
@@ -59,7 +59,7 @@ Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
+      className="relative z-0 mt-4 flex items-center text-sm font-medium text-teal-500"
     >
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
@@ -80,7 +80,7 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={
         className + 
-        ' relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400' +
+        ' relative z-0 order-first mb-3 flex items-center text-sm text-zinc-400' +
         (decorate ? ' pl-3.5': '')
       }
       {...props}
