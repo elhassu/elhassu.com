@@ -25,7 +25,7 @@ import { Link } from "react-router-dom";
 const experience = [
 	{
 		company: "Buddy HR",
-		title: "Junior Full Stack Developer",
+		title: "Full Stack Developer",
 		href: "https://www.buddy.hr",
 		logo: logoBuddy,
 		start: "11/2021",
@@ -36,7 +36,7 @@ const experience = [
 	},
 	{
 		company: "Maze Digital",
-		title: "Junior Full Stack Developer",
+		title: " Junior Full Stack Developer",
 		href: "https://www.maze.digital",
 		logo: logoMaze,
 		start: "06/2021",
@@ -227,7 +227,7 @@ export default function Home() {
 				</h3>
 			</div>
 			<p className="mx-16 mt-6 text-sm md:text-base text-daintree-800">
-				I'm Keelan, an entrepreneur and a Junior Full Stack Developer with a relentless passion for software
+				I'm Keelan, an entrepreneur and a Full Stack Developer with a relentless passion for software
 				development
 			</p>
 			<div className="ml-16 mt-6 flex gap-6">

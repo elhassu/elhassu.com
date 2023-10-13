@@ -40,7 +40,7 @@ export default function About() {
 					</h1>
 					<div className="mt-6 space-y-7 text-base text-daintree-900">
 						<p>
-							I'm Keelan Vella, a Junior Full Stack Developer with a relentless
+							I'm Keelan Vella, a Full Stack Developer with a relentless
 							passion for software development. With two years of professional experience, I've logged
 							countless hours of overtime, showcasing my unwavering dedication.
 						</p>
