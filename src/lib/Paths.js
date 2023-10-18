@@ -12,6 +12,14 @@ const components = {
 		label: "About",
 		element: <About />,
 	},
+	// "/experience": {
+	// 	label: "Experience",
+	// 	element: <About />,
+	// },
+	// "/education": {
+	// 	label: "Education",
+	// 	element: <About />,
+	// },
 	"/projects": {
 		label: "Projects",
 		element: <Projects />,

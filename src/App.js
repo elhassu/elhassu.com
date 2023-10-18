@@ -15,11 +15,11 @@ function App() {
 				<Background />
 				<Header />
 				<Routes>
-					{routes.map(({ path, element }) => (
+					{routes.map((route) => (
 						<Route
-							key={path}
-							path={path}
-							element={element}
+							key={route.path}
+							path={route.path}
+							element={<route.element path={route.path} />}
 						/>
 					))}
 				</Routes>
