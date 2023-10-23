@@ -25,17 +25,17 @@ const projects = [
 	},
 ];
 
-export default function Projects({ path }) {
+export default function Projects() {
 	return (
 		<>
-			{/* <Helmet
+			<Helmet
 				{...{
 					title: "Projects | Keelan Vella",
 					description:
-						"Keelan Vella, an Entrepreneur and a Full Stack Developer with a relentless passion for software development.",
-					path,
+						"Projects I've tackled to cast my influence across the world.",
+					path: "/projects",
 				}}
-			/> */}
+			/>
 			<SimpleLayout
 				title="Projects I've tackled to cast my influence across the world."
 				intro="In my pursuit of various endeavors, I've taken on a host of smaller projects, but these are the ones that I cherish the most."

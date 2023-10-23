@@ -1,6 +1,6 @@
 import { Helmet as ReactHelmet } from "react-helmet";
 
-export function Helmet({ title, description, path, children }) {
+export function Helmet({ title, description, path }) {
 	const pagePath = typeof path === "string" ? (path[0] === "/" ? path : `/${path}`) : "/";
 
 	return (

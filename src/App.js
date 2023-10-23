@@ -15,13 +15,41 @@ function App() {
 				<Background />
 				<Header />
 				<Routes>
-					{routes.map((route) => (
-						<Route
-							key={route.path}
-							path={route.path}
-							element={<route.element path={route.path} />}
-						/>
-					))}
+					{routes.map(({ path, element, subPaths }) => {
+						if (subPaths?.length) {
+							return (
+								<>
+									<Route
+										key={`${path}-sub`}
+										path={`${path}/*`}
+										element={
+											<Routes>
+												<Route
+													key={`${path}-sub`}
+													path={"/"}
+													element={element}
+												/>
+												{subPaths?.map(({ path, element }) => (
+													<Route
+														key={path}
+														path={path}
+														element={element}
+													/>
+												))}
+											</Routes>
+										}
+									/>
+								</>
+							);
+						}
+						return (
+							<Route
+								key={path}
+								path={path}
+								element={element}
+							/>
+						);
+					})}
 				</Routes>
 				<Footer />
 			</div>

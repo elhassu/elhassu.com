@@ -215,14 +215,17 @@ function Photos() {
 	);
 }
 
-export default function Home({ path }) {
+export default function Home() {
 	return (
 		<>
-			{/* <Helmet {...{
-				title: "Keelan Vella",
-				description: "Keelan Vella, an Entrepreneur and a Full Stack Developer with a relentless passion for software development.",
-				path
-			}}/> */}
+			<Helmet
+				{...{
+					title: "Keelan Vella",
+					description:
+						"Keelan Vella, an Entrepreneur and a Full Stack Developer with a relentless passion for software development.",
+					path: "/",
+				}}
+			/>
 			<div className="ml-16 pt-20 uppercase">
 				<h2 className="font-title text-2xl md:text-5xl leading-snug text-daintree-800 font-semibold">Keelan</h2>
 				<h1 className="font-title text-4xl md:text-7xl leading-5 md:leading-10 tracking-widest font-bold text-daintree-900">
