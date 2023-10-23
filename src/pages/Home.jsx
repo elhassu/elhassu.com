@@ -21,6 +21,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { AcademicHat } from "@/icons/Icons";
 import { Link } from "react-router-dom";
+import { Helmet } from "@/common/Helmet";
 
 const experience = [
 	{
@@ -217,6 +218,14 @@ function Photos() {
 export default function Home() {
 	return (
 		<>
+			<Helmet
+				{...{
+					title: "Keelan Vella",
+					description:
+						"Keelan Vella, an Entrepreneur and a Full Stack Developer with a relentless passion for software development.",
+					path: "/",
+				}}
+			/>
 			<div className="ml-16 pt-20 uppercase">
 				<h2 className="font-title text-2xl md:text-5xl leading-snug text-daintree-800 font-semibold">Keelan</h2>
 				<h1 className="font-title text-4xl md:text-7xl leading-5 md:leading-10 tracking-widest font-bold text-daintree-900">
@@ -227,7 +236,7 @@ export default function Home() {
 				</h3>
 			</div>
 			<p className="mx-16 mt-6 text-sm md:text-base text-daintree-800">
-				I'm Keelan, an entrepreneur and a Full Stack Developer with a relentless passion for software
+				I'm Keelan, an Entrepreneur and a Full Stack Developer with a relentless passion for software
 				development
 			</p>
 			<div className="ml-16 mt-6 flex gap-6">
