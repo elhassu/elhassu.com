@@ -4,10 +4,19 @@ import PeoplesPension from "@/images/logos/peoples-pension.jpg";
 import DashboardFigma from "@/images/photos/dashboard-figma.png";
 import PayrollHistory from "@/images/photos/payroll-history.png";
 import { CloudIcon, StarIcon, TrophyIcon } from "@heroicons/react/24/solid";
+import { Helmet } from "@/common/Helmet";
 
 export default function BuddyHR() {
 	return (
 		<>
+			<Helmet
+				{...{
+					title: "Buddy HR | Keelan Vella",
+					description:
+						"My experience as a Full Stack Developer at Buddy HR. Developing custom, user-centric payroll solutions for the Maltese & British markets.",
+					path: "/experience/buddy-hr",
+				}}
+			/>
 			<div className="overflow-hidden py-16 my-16 sm:my-32">
 				<div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
 					<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
@@ -154,8 +163,8 @@ export default function BuddyHR() {
 									modernised version, with less clutter and a more objective interface. Centering the
 									user experience around the employees, who are the very end users. By making the
 									experience better for; Advisors, Managers, Payroll Officers and employees, we've
-									essentially captured the very essence of what makes Buddy HR, Buddy HR.
-									Your people first.
+									essentially captured the very essence of what makes Buddy HR, Buddy HR. Your people
+									first.
 								</p>
 							</div>
 						</div>

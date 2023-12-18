@@ -1,14 +1,27 @@
-import Mollie from "@/images/logos/mollie.png";
+import FreshBooks from "@/images/logos/freshbooks.png";
 import MazeDigitalLogo from "@/images/logos/maze-digital.png";
+import Mollie from "@/images/logos/mollie.png";
 import QuickBooks from "@/images/logos/quickbooks.png";
 import MollieQuickBooks from "@/images/photos/mollie-quickbooks.png";
-import FreshBooks from "@/images/logos/freshbooks.png";
 import CarbonPayWalkThrough from "@/videos/carbonpay-walkthrough.mp4";
-import { ArrowTrendingUpIcon, BuildingStorefrontIcon, CloudIcon, Cog6ToothIcon, StarIcon, TrophyIcon } from "@heroicons/react/24/solid";
+import {
+	ArrowTrendingUpIcon,
+	BuildingStorefrontIcon,
+	Cog6ToothIcon
+} from "@heroicons/react/24/solid";
+import { Helmet } from "@/common/Helmet";
 
 export default function MazeDigital() {
 	return (
 		<>
+			<Helmet
+				{...{
+					title: "Maze Digital | Keelan Vella",
+					description:
+						"My experience as a Junior Full Stack Developer at Maze Digital. Integrating third-party software solutions to streamline processes and enhance functionality.",
+					path: "/experience/maze-digital",
+				}}
+			/>
 			<div className="overflow-hidden py-16 my-16 sm:my-32">
 				<div className="max-w-7xl pl-8 mt-8 lg:mt-0 lg:rounded-r-3xl lg:flex lg:mr-8 pb-8 bg-daintree-900">
 					<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
@@ -126,7 +139,8 @@ export default function MazeDigital() {
 										/>
 										<span>
 											<strong className="font-semibold text-gray-900">Official Listings</strong>{" "}
-											Marketplace listed integrations on QuickBooks, Sage Accounting and FreshBooks
+											Marketplace listed integrations on QuickBooks, Sage Accounting and
+											FreshBooks
 										</span>
 									</li>
 									<li className="flex gap-x-3">
@@ -141,13 +155,13 @@ export default function MazeDigital() {
 									</li>
 								</ul>
 								<p className="mt-8">
-									At Maze Digital, I communicated with clients to understand their needs and
-									developed custom solutions to meet their requirements. I also worked with
-									third-party software providers to integrate their solutions with our clients'
-									systems. Liaising with my superior, I developed several integrations for our
-									clients, including: Mollie with QuickBooks and Sage Accounting, and CarbonPay with
-									Expensify, Sage Banking, FreshBooks, and QuickBooks. These integrations were
-									instrumental in optimising our clients' operations.
+									At Maze Digital, I communicated with clients to understand their needs and developed
+									custom solutions to meet their requirements. I also worked with third-party software
+									providers to integrate their solutions with our clients' systems. Liaising with my
+									superior, I developed several integrations for our clients, including: Mollie with
+									QuickBooks and Sage Accounting, and CarbonPay with Expensify, Sage Banking,
+									FreshBooks, and QuickBooks. These integrations were instrumental in optimising our
+									clients' operations.
 								</p>
 								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
 									The beauty of integrations
@@ -158,16 +172,16 @@ export default function MazeDigital() {
 									competencies while leveraging the expertise of other companies to provide a
 									comprehensive solution to your customers. It was incredible for me to create such
 									simple yet complex integrations, empowering our clients. I was able to learn a lot
-									about the various software solutions available and how they can be used to
-									optimise business operations, especially regarding accounting and banking.
+									about the various software solutions available and how they can be used to optimise
+									business operations, especially regarding accounting and banking.
 								</p>
 								<p className="mt-6">
 									This experience has given me a deeper understanding of the importance of
-									communication and collaboration. I have learned how to communicate effectively
-									with clients and third-party software providers to understand their needs and
-									develop custom solutions to meet their requirements. I have also learned how to
-									communicate with my superior to ensure that the solutions I develop are in line
-									with the company's vision and goals.
+									communication and collaboration. I have learned how to communicate effectively with
+									clients and third-party software providers to understand their needs and develop
+									custom solutions to meet their requirements. I have also learned how to communicate
+									with my superior to ensure that the solutions I develop are in line with the
+									company's vision and goals.
 								</p>
 							</div>
 						</div>
