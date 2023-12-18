@@ -1,16 +1,19 @@
+import { Helmet } from "@/common/Helmet";
+import { AcademicHat } from "@/icons/Icons";
 import { BriefcaseIcon } from "@/icons/Icons.jsx";
 import { GitHubIcon, InstagramIcon, LinkedInIcon } from "@/icons/SocialIcons.jsx";
 import logoBuddy from "@/images/logos/buddy.png";
 import logoFireShip from "@/images/logos/fireship.jpeg";
 import logoLidl from "@/images/logos/lidl.png";
+import logoMaze from "@/images/logos/maze-digital.png";
 import logoMCAST from "@/images/logos/mcast.png";
 import logoMVPA from "@/images/logos/mvpa.png";
-import logoMaze from "@/images/logos/maze-digital.png";
 import image1 from "@/images/photos/image-1.jpg";
 import image2 from "@/images/photos/image-2.jpg";
 import image3 from "@/images/photos/image-3.jpg";
 import image4 from "@/images/photos/image-4.jpg";
 import image5 from "@/images/photos/image-5.jpg";
+import { SocialLink } from "@/lib/Paths";
 import { getDuration, getMonthYear } from "@/lib/formatDate";
 import {
 	ArchiveBoxIcon,
@@ -19,9 +22,6 @@ import {
 	GlobeAltIcon,
 	MusicalNoteIcon,
 } from "@heroicons/react/24/solid";
-import { AcademicHat } from "@/icons/Icons";
-import { Link } from "react-router-dom";
-import { Helmet } from "@/common/Helmet";
 
 const experience = [
 	{
@@ -98,19 +98,6 @@ const projects = [
 		end: "03/2022",
 	},
 ];
-
-function SocialLink({ icon: Icon, ...props }) {
-	return (
-		<Link
-			className="group -m-1 p-1"
-			{...props}
-			target="_blank"
-			rel="noreferrer"
-		>
-			<Icon className="h-6 w-6 fill-daintree-700 transition group-hover:fill-daintree-800" />
-		</Link>
-	);
-}
 
 function Showcase({ showcase }) {
 	let startLabel = typeof showcase.start === "string" ? showcase.start : showcase.start?.label;
