@@ -8,6 +8,7 @@ import logoLidl from "@/images/logos/lidl.png";
 import logoMaze from "@/images/logos/maze-digital.png";
 import logoMCAST from "@/images/logos/mcast.png";
 import logoMVPA from "@/images/logos/mvpa.png";
+import logoUXDI from "@/images/logos/ux-design-institute.jpg";
 import image1 from "@/images/photos/image-1.jpg";
 import image2 from "@/images/photos/image-2.jpg";
 import image3 from "@/images/photos/image-3.jpg";
@@ -62,6 +63,13 @@ const experience = [
 ];
 
 const education = [
+	{
+		company: "UX Design Institute",
+		title: "Professional Diploma in UX Design",
+		href: "https://www.uxdesigninstitute.com",
+		logo: logoUXDI,
+		round: true,
+	},
 	{
 		company: "Fireship.io",
 		title: "NextJS Firebase Course",
