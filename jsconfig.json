@@ -10,6 +10,7 @@
             "@/common": ["src/common"],
             "@/shapes": ["src/assets/shapes"],
             "@/images": ["src/assets/images"],
+            "@/videos": ["src/assets/videos"],
             "@/lib": ["src/lib"],
             "@/icons": ["src/assets/icons"],
             "@/pages": ["src/pages/*"]
