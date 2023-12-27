@@ -6,6 +6,7 @@ import Experience from "@/pages/Experience";
 import BuddyHR from "@/pages/BuddyHR";
 import MazeDigital from "@/pages/MazeDigital";
 import { Link } from "react-router-dom";
+import { routes as Routes } from "./Routes";
 
 const convertToRoutes = (components) => {
 	if (!(components instanceof Object)) return [];
@@ -15,41 +16,48 @@ const convertToRoutes = (components) => {
 			element,
 			subPaths: convertToRoutes(subPaths),
 		}))
-		.concat({ path: "*", element: <NotFound /> });
+		.concat({ path: "*", element: NotFound });
 };
 
-const components = {
-	"/": {
-		label: "Home",
-		element: <Home />,
-	},
-	"/about": {
-		label: "About",
-		element: <About />,
-	},
-	"/experience": {
-		label: "Experience",
-		element: <Experience />,
-		subPaths: {
-			"buddy-hr": {
-				label: "Buddy HR",
-				element: <BuddyHR />,
-			},
-			"maze-digital": {
-				label: "Maze Digital",
-				element: <MazeDigital />,
-			},
-		},
-	},
-	// "/education": {
-	// 	label: "Education",
-	// 	element: <About />,
-	// },
-	"/projects": {
-		label: "Projects",
-		element: <Projects />,
-	},
+const importedComponents = {
+	"Home": Home,
+	"About": About,
+	"Projects": Projects,
+	"Experience": Experience,
+	"Buddy HR": BuddyHR,
+	"Maze Digital": MazeDigital,
 };
+
+const mapLabelToComponent = (label) => {
+	return importedComponents[label];
+};
+
+const components = Routes.reduce((acc, { path, label, subPaths }) => {
+	if (subPaths?.length) {
+		return {
+			...acc,
+			[path]: {
+				label,
+				element: mapLabelToComponent(label),
+				subPaths: subPaths.reduce((acc, { path, label }) => {
+					return {
+						...acc,
+						[path]: {
+							element: mapLabelToComponent(label),
+						},
+					};
+				}, {}),
+			},
+		};
+	}
+	return {
+		...acc,
+		[path]: {
+			label,
+			element: mapLabelToComponent(label),
+		},
+	};
+}, {});
 
 export function SocialLink({ icon: Icon, ...props }) {
 	return (

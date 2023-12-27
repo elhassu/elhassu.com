@@ -24,7 +24,7 @@
   "scripts": {
     "start": "craco start",
     "predeploy": "npm i && npm run build",
-    "deploy": "npm run predeploy && firebase deploy",
+    "deploy": "npm run predeploy && node generate-sitemap.js && firebase deploy",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject"

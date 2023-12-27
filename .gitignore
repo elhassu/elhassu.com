@@ -24,3 +24,4 @@ yarn-error.log*
 package-lock.json
 .firebase/hosting.cHVibGlj.cache
 .firebase/hosting.YnVpbGQ.cache
+public/sitemap.xml

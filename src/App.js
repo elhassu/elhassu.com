@@ -15,7 +15,7 @@ function App() {
 				<Background />
 				<Header />
 				<Routes>
-					{routes.map(({ path, element, subPaths }) => {
+					{routes.map(({ path, element: Element, subPaths }) => {
 						if (subPaths?.length) {
 							return (
 								<>
@@ -27,13 +27,13 @@ function App() {
 												<Route
 													key={`${path}-sub`}
 													path={"/"}
-													element={element}
+													element={<Element />}
 												/>
-												{subPaths?.map(({ path, element }) => (
+												{subPaths?.map(({ path, element: Element }) => (
 													<Route
 														key={path}
 														path={path}
-														element={element}
+														element={<Element />}
 													/>
 												))}
 											</Routes>
@@ -46,7 +46,7 @@ function App() {
 							<Route
 								key={path}
 								path={path}
-								element={element}
+								element={<Element />}
 							/>
 						);
 					})}
