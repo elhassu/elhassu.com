@@ -25,15 +25,15 @@ export default function MazeDigital() {
 			<div className="overflow-hidden py-16 my-16 sm:my-32">
 				<div className="max-w-7xl pl-8 mt-8 lg:mt-0 lg:rounded-r-3xl lg:flex lg:mr-8 pb-8 bg-daintree-900">
 					<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-						<div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-							<h2 className="text-3xl font-bold tracking-tight text-celeste-100 sm:text-4xl pt-8">
+						<header className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
+							<h1 className="text-3xl font-bold tracking-tight text-celeste-100 sm:text-4xl pt-8">
 								<img
 									src={MazeDigitalLogo}
 									className="h-16 w-22 inline-block mr-2"
-									alt="Buddy Logo"
+									alt="Maze Digital Logo"
 								/>
 								Maze Digital
-							</h2>
+							</h1>
 							<p className="mt-6 text-xl leading-8 text-celeste-200">
 								During my tenure as a Junior Full Stack Developer at Maze Digital, I embarked on an
 								exciting journey of growth and learning in the world of software development.
@@ -42,7 +42,7 @@ export default function MazeDigital() {
 								I had the opportunity to work on various projects, with a focus on integrating
 								third-party software solutions to streamline processes and enhance functionality.
 							</p>
-						</div>
+						</header>
 						<div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
 							<div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
 								<img
@@ -85,17 +85,17 @@ export default function MazeDigital() {
 					</div>
 				</div>
 			</div>
-			<div className="relative isolate overflow-hidden px-6 lg:overflow-visible lg:px-0">
+			<section className="relative isolate overflow-hidden px-6 lg:overflow-visible lg:px-0">
 				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
 					<div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
 						<div className="lg:pr-4">
 							<div className="lg:max-w-lg">
-								<p className="text-base font-semibold leading-7 text-daintree-600">
+								<h2 className="text-base font-semibold leading-7 text-daintree-600">
 									Unparalleled Connections
-								</p>
-								<h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+								</h2>
+								<h3 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 									Integration Expertise
-								</h1>
+								</h3>
 								<p className="mt-6 text-xl leading-8 text-daintree-900">
 									I successfully integrated third-party software systems, such as CarbonPay with
 									Expensify, Sage Banking, FreshBooks, and QuickBooks, as well as Mollie with
@@ -187,7 +187,7 @@ export default function MazeDigital() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</>
 	);
 }

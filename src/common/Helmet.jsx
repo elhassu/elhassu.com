@@ -1,6 +1,6 @@
 import { Helmet as ReactHelmet } from "react-helmet";
 
-export function Helmet({ title, description, path }) {
+export function Helmet({ title, description, path, keywords }) {
 	const pagePath = typeof path === "string" ? (path[0] === "/" ? path : `/${path}`) : "/";
 
 	return (
@@ -18,6 +18,12 @@ export function Helmet({ title, description, path }) {
 				rel="canonical"
 				href={`https://www.elhassu.com${pagePath}`}
 			/>
+			{keywords && (
+				<meta
+					name="keywords"
+					content={keywords}
+				/>
+			)}
 		</ReactHelmet>
 	);
 }

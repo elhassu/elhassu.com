@@ -6,7 +6,7 @@ import { Helmet } from "@/common/Helmet";
 
 const projects = [
 	{
-		name: "SocketBooks",
+		name: "SocketBooks™",
 		description: "An on-going project. Assisting mechanics with their day-to-day operations.",
 		link: { href: "", label: "Coming Soon" },
 		logo: WrenchIcon,

@@ -24,8 +24,11 @@ export function Header() {
 	const path = location.pathname;
 
 	return (
-		<header className="sticky top-4 z-10">
-			<nav className="hidden bg-celeste-100 border shadow-md border-celeste-200 px-6 py-1 rounded-full w-fit mx-auto sm:flex sm:gap-x-12">
+		<div className="sticky top-4 z-10">
+			<nav
+				className="hidden bg-celeste-100 border shadow-md border-celeste-200 px-6 py-1 rounded-full w-fit mx-auto sm:flex sm:gap-x-12"
+				role="navigation"
+			>
 				{paths.map((item) => {
 					const active = path === item.path ? "text-daintree-600 border-daintree-600" : "text-celeste-900";
 					return (
@@ -40,6 +43,7 @@ export function Header() {
 				})}
 			</nav>
 			<nav
+				role="navigation"
 				className="flex items-center sm:hidden justify-end px-6 lg:px-8"
 				aria-label="Global"
 			>
@@ -99,6 +103,6 @@ export function Header() {
 					</Transition.Root>
 				</Popover>
 			</nav>
-		</header>
+		</div>
 	);
 }

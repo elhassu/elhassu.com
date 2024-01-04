@@ -23,9 +23,10 @@ export default function Experience() {
 					description:
 						"Explore a collection of my most significant and impactful projects, providing a comprehensive overview of my skills, expertise, and dedication in the professional world.",
 					path: "/experience",
+					keywords: "Keelan Vella, Software Developer, Entrepreneur, Full Stack Developer, Buddy HR, Maze Digital, Experience",
 				}}
 			/>
-			<Container className="mt-16 sm:mt-32">
+			<Container as="header" className="mt-16 sm:mt-32">
 				<h1 className="text-4xl font-bold tracking-tight text-daintree-800">
 					Experiences That Shape My Professional Journey
 				</h1>
@@ -60,6 +61,7 @@ export default function Experience() {
 										<Link
 											to="/experience/buddy-hr"
 											className="font-small text-daintree-800 hover:text-daintree-900"
+											aria-label="Learn more about my experience at Buddy HR"
 										>
 											Learn more about my experience &rarr;
 										</Link>
@@ -170,6 +172,7 @@ export default function Experience() {
 									<div className="mt-6 text-right text-base">
 										<Link
 											to="/experience/maze-digital"
+											aria-label="Learn more about my experience at Maze Digital"
 											className="font-small text-celeste-100 hover:text-celeste-200"
 										>
 											Learn more about my experience &rarr;

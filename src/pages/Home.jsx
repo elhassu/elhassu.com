@@ -57,8 +57,8 @@ const experience = [
 		company: "Ambika Confectionary",
 		title: "Sales Assistant",
 		logo: BuildingStorefrontIcon,
-		start: "06/2020",
-		end: "06/2019",
+		start: "06/2019",
+		end: "06/2020",
 	},
 ];
 
@@ -122,7 +122,7 @@ function Showcase({ showcase }) {
 				) : (
 					<img
 						src={showcase.logo}
-						alt=""
+						alt={`${showcase.company} logo`}
 						className={`h-9 p-1 object-contain ${showcase.round ? "rounded-full" : ""}`}
 					/>
 				)}
@@ -142,7 +142,7 @@ function Showcase({ showcase }) {
 						</a>
 					)}
 				</dd>
-				<dt className="sr-only">Showcase</dt>
+				<dt className="sr-only">{showcase.title}</dt>
 				<dd className="text-xs text-celeste-500">
 					{showcase.title}
 					{getDuration(startDate, endDate)}
@@ -166,7 +166,10 @@ function Showcase({ showcase }) {
 
 function Portfolio({ title = "Experience", Icon = BriefcaseIcon, portfolio }) {
 	return (
-		<div className="rounded-2xl border border-daintree-700 p-6 h-full">
+		<section
+			title={`${title} Section`}
+			className="rounded-2xl border border-daintree-700 p-6 h-full"
+		>
 			<h2 className="flex text-sm font-semibold text-daintree-800">
 				<Icon className="h-6 w-6 flex-none" />
 				<span className="font-title font-bold text-md ml-3 mt-1 uppercase">{title}</span>
@@ -179,7 +182,7 @@ function Portfolio({ title = "Experience", Icon = BriefcaseIcon, portfolio }) {
 					/>
 				))}
 			</ol>
-		</div>
+		</section>
 	);
 }
 
@@ -187,7 +190,10 @@ function Photos() {
 	let rotations = ["rotate-2", "-rotate-2", "rotate-2", "rotate-2", "-rotate-2"];
 
 	return (
-		<div className="mt-16 sm:mt-20">
+		<section
+			aria-label="Hobby Photos"
+			className="mt-16 sm:mt-20"
+		>
 			<div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
 				{[image1, image2, image3, image4, image5].map((image, imageIndex) => (
 					<div
@@ -206,7 +212,7 @@ function Photos() {
 					</div>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 }
 
@@ -219,22 +225,36 @@ export default function Home() {
 					description:
 						"Keelan Vella, an Entrepreneur and a Full Stack Developer with a relentless passion for software development.",
 					path: "/",
+					keywords:
+						"Keelan Vella, Keelan Vella Zerafa, El Hassu, ElHassu, Full Stack Developer, Entrepreneur, Software Developer, Software Engineer",
 				}}
 			/>
-			<div className="ml-16 pt-20 uppercase">
-				<h2 className="font-title text-2xl md:text-5xl leading-snug text-daintree-800 font-semibold">Keelan</h2>
-				<h1 className="font-title text-4xl md:text-7xl leading-5 md:leading-10 tracking-widest font-bold text-daintree-900">
-					Vella
+			<header className="ml-16 pt-20 uppercase">
+				<h1 aria-label="Full Name">
+					<span className="font-title text-2xl md:text-5xl leading-snug text-daintree-800 font-semibold">
+						Keelan
+					</span>
+					<br />
+					<span className="font-title text-4xl md:text-7xl leading-5 md:leading-10 tracking-widest font-bold text-daintree-900">
+						Vella
+					</span>
 				</h1>
-				<h3 className="font-title text-lg md:text-xl leading-relaxed tracking-widest text-daintree-900 font-bold">
+				<h2
+					aria-label="Role"
+					className="font-title text-lg md:text-xl leading-relaxed tracking-widest text-daintree-900 font-bold"
+				>
 					Full Stack Developer
-				</h3>
-			</div>
-			<p className="mx-16 mt-6 text-sm md:text-base text-daintree-800">
-				I'm Keelan, an Entrepreneur and a Full Stack Developer with a relentless passion for software
-				development
-			</p>
-			<div className="ml-16 mt-6 flex gap-6">
+				</h2>
+				<p className="mr-48 mt-6 text-sm md:text-base text-daintree-800 normal-case">
+					Explore my world of software development, project management, and creative design. Navigate through
+					my expertise in Node.js, React.js, and AWS, showcased with attention to detail. Welcome to a vibrant
+					gateway of diverse skills and experiences!
+				</p>
+			</header>
+			<section
+				aria-label="Social Media Links"
+				className="ml-16 mt-6 flex gap-6"
+			>
 				<SocialLink
 					to="https://www.instagram.com/keelan_velafa/"
 					aria-label="Follow on Instagram"
@@ -250,9 +270,12 @@ export default function Home() {
 					aria-label="Follow on LinkedIn"
 					icon={LinkedInIcon}
 				/>
-			</div>
+			</section>
 
-			<div className="mt-8 mx-auto px-8 md:px-16 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none lg:grid-cols-2">
+			<section
+				aria-label="Experience & Education"
+				className="mt-8 mx-auto px-8 md:px-16 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none lg:grid-cols-2"
+			>
 				<div className="space-y-6">
 					<Portfolio portfolio={experience} />
 				</div>
@@ -265,13 +288,16 @@ export default function Home() {
 						}}
 					/>
 				</div>
-			</div>
+			</section>
 
 			<Photos />
 
-			<div className="mt-16 mx-auto px-8 md:px-16 lg:px-36 xl:px-52 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none">
+			<section
+				aria-label="Projects"
+				className="mt-16 mx-auto px-8 md:px-16 lg:px-36 xl:px-52 grid max-w-xl grid-cols-1 gap-y-10 gap-8 lg:max-w-none"
+			>
 				<Portfolio {...{ title: "Projects", Icon: ArchiveBoxIcon, portfolio: projects }} />
-			</div>
+			</section>
 		</>
 	);
 }

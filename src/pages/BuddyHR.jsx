@@ -15,20 +15,21 @@ export default function BuddyHR() {
 					description:
 						"My experience as a Full Stack Developer at Buddy HR. Developing custom, user-centric payroll solutions for the Maltese & British markets.",
 					path: "/experience/buddy-hr",
+					keywords: "Keelan Vella, Software Developer, Entrepreneur, Full Stack Developer, Buddy HR, Experience",
 				}}
 			/>
 			<div className="overflow-hidden py-16 my-16 sm:my-32">
 				<div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
 					<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-						<div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-							<h2 className="text-3xl font-bold tracking-tight text-daintree-900 sm:text-4xl">
+						<header className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
+							<h1 className="text-3xl font-bold tracking-tight text-daintree-900 sm:text-4xl">
 								<img
 									src={BuddyLogo}
 									className="h-16 w-16 inline-block mr-2"
 									alt="Buddy Logo"
 								/>
 								Buddy HR
-							</h2>
+							</h1>
 							<p className="mt-6 text-xl leading-8 text-celeste-700">
 								In my role as a Full Stack Developer at Buddy HR, I take a hands-on approach to software
 								development, ensuring that our solutions align with the company's strategic objectives.
@@ -37,7 +38,7 @@ export default function BuddyHR() {
 								I'm responsible for planning, developing, reviewing, and deploying code, all with a
 								strong focus on enhancing user experiences and helping Buddy HR reach its goals.
 							</p>
-						</div>
+						</header>
 						<div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
 							<div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
 								<img
@@ -73,15 +74,15 @@ export default function BuddyHR() {
 					</div>
 				</div>
 			</div>
-			<div className="relative isolate overflow-hidden px-6 lg:overflow-visible lg:px-0">
+			<section className="relative isolate overflow-hidden px-6 lg:overflow-visible lg:px-0">
 				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
 					<div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
 						<div className="lg:pr-4">
 							<div className="lg:max-w-lg">
-								<p className="text-base font-semibold leading-7 text-daintree-600">Reimagined UI/UX</p>
-								<h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+								<h2 className="text-base font-semibold leading-7 text-daintree-600">Reimagined UI/UX</h2>
+								<h3 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 									An enhanced experience
-								</h1>
+								</h3>
 								<p className="mt-6 text-xl leading-8 text-daintree-900">
 									Every step of the way, we've thought about how to make the experience better for our
 									users. It always starts with the client, how they view and interact with our
@@ -170,7 +171,7 @@ export default function BuddyHR() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</>
 	);
 }
