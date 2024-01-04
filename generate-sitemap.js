@@ -45,9 +45,21 @@ function formatW3C(date) {
 }
 (async () => {
 	console.time("Sitemap generated");
+
+	const remappedRoutes = [];
+
+	routes.forEach(({ path, updatedAt, subPaths }) => {
+		remappedRoutes.push({ path, updatedAt });
+		if (subPaths?.length) {
+			subPaths.forEach(({ path: subPath, updatedAt }) => {
+				remappedRoutes.push({ path: `${path}${subPath}`, updatedAt });
+			});
+		}
+	});
+
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${routes
+    ${remappedRoutes
 		.map(({ path, updatedAt }) => {
 			return `<url>
         <loc>${BASE_URL}${path}</loc>
